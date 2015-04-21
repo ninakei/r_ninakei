@@ -1,0 +1,94 @@
+# Vector(向量)
+
+# 資料就是向量
+
+# 1.三種常見向量格式
+
+## 數值
+c(4, 7, 9)
+
+## 字元
+c('a', 'b', 'c')
+
+## 邏輯值
+c(1, TRUE, "three")
+
+# 2.製造連續數值
+#列出5-9
+5:9
+## seq() 列出幾到幾，第三個數字為間隔
+seq(5, 9)
+seq(5, 9, 0.5)
+# 列出9-5
+9:5
+
+# 3.使用索引(access)呼叫向量內容
+#列好，再用sentence叫出來(叫多個、列出)
+sentence <- c('walk', 'the', 'plank')
+sentence[3]
+sentence[1]
+sentence[c(1, 3)]
+#變換、增加單詞
+sentence[3] <- "dog"
+sentence[4] <- 'to'
+sentence[2:4]
+sentence[5:7] <- c('the', 'poop', 'deck')
+sentence[6]
+## []
+
+
+# 4.定義向量物件
+
+ranks <- 1:3
+names(ranks) <- c("first", "second", "third")
+ranks
+ranks["first"]
+
+
+# 5.單一向量視覺化
+#ves定義數量，bar畫長條圖
+vesselsSunk <- c(4, 5, 1)
+barplot(vesselsSunk)
+#幫數值定名
+names(vesselsSunk) <- c("England", "France", "Norway")
+barplot(vesselsSunk)
+#畫1-100的長條圖
+barplot(1:100)
+
+
+# 6.向量的四則運算
+#定義數列後直接做加減乘除
+a <- c(1, 2, 3)
+a + 1
+a / 2
+a * 2
+b <- c(4, 5, 6)
+a + b
+a - b
+##=做判斷
+a == c(1, 99, 3)
+a == c(1,2,3)
+sin(a)
+sqrt(a)
+
+
+
+# 7.兩項向量視覺化
+#定義x y
+x <- seq(1, 20, 0.1)
+y <- sin(x)
+## plot(畫點狀圖)
+plot(x, y)
+## abs()
+values <- -10:10
+absolutes <- abs(values)
+plot(values, absolutes)
+
+# 8.處理遺漏值(NA)
+#有na會遺漏掉，全部都變成na
+a <- c(1, 3, NA, 7, 9)
+sum(a)
+#看個解釋
+help(sum)
+#去改變定義
+sum(a, na.rm = TRUE)
